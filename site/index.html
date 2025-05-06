@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conlang Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Conlang Generator</h1>
 
+    <label for="consonants">Consonants (comma seperated):</label>
+    <input id="consonants" value="b,d,f,g,h,k,l,m,n,p,r,s,t,v,z">
+
+    <label for="vowels">Vowels (comma seperated):</label>
+    <input id="vowels" value="a,e,i,o,u">
+
+    <label for="syllables">Syllable patterns (comma seperated, use C and V):</label>
+    <input id="syllables" value="CVC,CV,VC">
+
+    <label for="phonotactics">Phonotactics rule (regex, optional):</label>
+    <input id="phonotactics" placeholder="e.g. ^(?!.*kk).*$">
+
+    <label for="verbRules">Verb conjugation rules (optional):</label>
+    <textarea id="verbRules" rows="4" placeholder='Example:
+      default: -ar
+      if endsWith i: -ir
+      if endsWith e: -er'></textarea>
+
+    <button onclick="generateWords()">Generate Words</button>
+
+    <div id="output"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
